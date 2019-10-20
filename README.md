@@ -32,9 +32,9 @@ Things you may want to cover:
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many  :edits, throught:   :groups_users
+- has_many  :groups, throught:   :groups_users
 
-## editテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |groupname|string|null: false|
