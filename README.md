@@ -34,7 +34,7 @@ Things you may want to cover:
 ### Association
 - has_many  :edits, throught:   :groups_users
 
-##editテーブル
+##　editテーブル
 |Column|Type|Options|
 |------|----|-------|
 |groupname|string|null: false|
