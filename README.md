@@ -55,7 +55,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|image||text||null: false|
+|image|text|null: false|
 ### Association
 - has_many  :groups, throught:   :groups_users
 - has_many :users, throught:    :groups_users
