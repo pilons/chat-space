@@ -57,8 +57,8 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false|
-|image|text|null: false|
+|message|text|null: false <br> foreign_key: true|
+|image|text|null: false <br> foreign_key: true|
 ### Association
-- has_many  :groups
-- has_many  :users
+- belongs_to  :group
+- belongs_to  :user
