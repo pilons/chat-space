@@ -30,14 +30,14 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|name|string|index: true|
+|name|string|index: true <br> null: false|
 ### Association
 - has_many  :groups, throught:   :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :users, throught:    :groups_users
 - has_many :groups_users
@@ -45,17 +45,29 @@ Things you may want to cover:
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user_id|references|null: false <br> foreign_key: true|
+|group_id|references|null: false <br> foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
 
-## messagesのテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
 |image|text|null: false|
 ### Association
-- has_many  :groups, throught:   :groups_users
-- has_many :users, throught:    :groups_users
+- has_many  :groups, throught:   :maessages_users_groups
+- has_many :users, throught:    :maessages_users_groups
+- has_many :maessages_users_groups
+
+## maessages_users_groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false <br> foreign_key: true|
+|group_id|references|null: false <br> foreign_key: true|
+|maddage_id|references|null: false|
+### Association
+- belongs_to :group
+- belongs_to :user
+- belongs_to :message
