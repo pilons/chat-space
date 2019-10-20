@@ -30,7 +30,7 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|name|string|index: true <br> null: false|
+|name|string|index: true <br> null: false  <br> foreign_key: true|
 ### Association
 - has_many  :groups, throught:   :groups_users
 - has_many  :groups_users
@@ -39,7 +39,7 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false　<br> foreign_key: true|
 ### Association
 - has_many  :users, throught:    :groups_users
 - has_many  :groups_users
@@ -57,8 +57,8 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false <br> foreign_key: true|
-|image|text|null: false <br> foreign_key: true|
+|message|text|null: false|
+|image|text|null: false|
 ### Association
 - belongs_to  :group
 - belongs_to  :user
