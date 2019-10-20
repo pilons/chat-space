@@ -57,4 +57,5 @@ Things you may want to cover:
 |message|text|null: false|
 |image|text|null: false|
 ### Association
-- has_many :groups_users 
+- has_many :groups
+- has_many :users
