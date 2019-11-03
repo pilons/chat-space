@@ -42,10 +42,10 @@
     .form
       %form.new_message
         .input-box
-          %input.input-box__text{:placeholder =>"type a message",:type =>"text", :name=>"message[content]"}
-          %label.input-box__image{:for =>"message_image"}
+          %input.input-box__text{placeholder: 'type a message', type: 'text', name: 'message[content]'}
+          %label.input-box__image{for: 'message_image'}
             = fa_icon 'picture-o', class: 'icon'
-        %input.submit-btn{:type =>"submit",:name =>"commit", :value=>"Send",:data-disable-with =>"Send"}
+        %input.submit-btn{type: 'submit',name: 'commit', value: 'Send'}
 
 
             
