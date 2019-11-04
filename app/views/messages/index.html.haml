@@ -44,12 +44,13 @@
           メッセージ書きます。
 
     .form
-      %form.new_message
-        .input-box
-          %input.input-box__text{placeholder: 'type a message', type: 'text', name: 'message[content]'}
-          %label.input-box__image{for: 'message_image'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
-        %input.submit-btn{type: 'submit',name: 'commit', value: 'Send'}
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
 
 
             
