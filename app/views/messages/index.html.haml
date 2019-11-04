@@ -33,15 +33,9 @@
             ユーザ名
       .main-header__edit-btn
         Edit
+        
     .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker
-            ユーザ名
-          %p.message__upper-info__date
-            2019/10/26(sat)
-        %p.message__text
-          メッセージ書きます。
+      = render @messages
 
     .form
       = form_for [@group, @message] do |f|
