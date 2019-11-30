@@ -3,11 +3,11 @@
   .main-header
     .main-header__left-box
       %h2.main-header__left-box__current-group
-        グループ名
+        = @group.name
       %ul.main-header__left-box__member-list
         Member:
         %li.main-header__left-box__member-list__member
-          ユーザ名
+          = @group.users.pluck(:name).join(" ")
     .main-header__edit-btn
       Edit
       
