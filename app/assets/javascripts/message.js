@@ -47,6 +47,8 @@ $(function(){
 
  var reloadMessages = function() {
    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+   var url = $(location).attr('pathname');
+   if(url.match('messages')){
    last_message_id =  $(".lower-message__content:last").data("message_id")
    $.ajax({
     url: 'api/messages',
@@ -69,6 +71,6 @@ $(function(){
   .fail(function(){
     alert('error');
   });
- };
+  } };
  setInterval(reloadMessages, 7000);
 });
