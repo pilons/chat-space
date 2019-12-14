@@ -15,19 +15,23 @@
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-      &__user-name{
-      }
+      color: white;
       &__menu{
         display: flex;
         &__new-group{
           margin-left: 0.3rem;
+          color: white;
         }
         &__edit-user{
           margin-left: 0.3rem;
+          color: white;
         }
       }
     }
   }
+}
+.icon{
+  color: white;
 }
 .groups{
   box-sizing: border-box;
@@ -41,10 +45,12 @@
     &__group-name{
       font-size: 15px;
       margin-bottom: 5px;
+      color: white;
       
     }
     &__latest-message{
         font-size: 11px;
+        color: white;
         
     }
   }
