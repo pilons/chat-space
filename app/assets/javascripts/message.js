@@ -11,8 +11,8 @@ $(function(){
               ${message.created_at}
             </div>
           </div>
-          <div class="lower-message">
-            <div class="lower-message__content" data-message_id=${message.id}>
+          <div class="lower-message" data-message_id=${message.id}>
+            <div class="lower-message__content">
               ${message.content}
             </div>
           </div>
@@ -49,7 +49,7 @@ $(function(){
    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
    var url = $(location).attr('pathname');
    if(url.match('messages')){
-   last_message_id =  $(".lower-message__content:last").data("message_id")
+   last_message_id =  $(".lower-message:last").data("message_id")
    $.ajax({
     url: 'api/messages',
     type: "GET",
@@ -60,13 +60,13 @@ $(function(){
   })
   .done(function(message){
     if(message.length != 0){
-    var insertHTML = '';
-    $.each(message, function(i, message){
-      insertHTML += buildHTML(message)
-    });
-    $('.messages').append(insertHTML);
-    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast');
-  }
+      var insertHTML = '';
+      $.each(message, function(i, message){
+        insertHTML += buildHTML(message)
+      });
+      $('.messages').append(insertHTML);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast');
+    }
   })
   .fail(function(){
     alert('error');
